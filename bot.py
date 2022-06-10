@@ -1,5 +1,5 @@
 import discord
-from creds import TOKEN
+import creds
 
 client = discord.Client()
 LANGS = {}
@@ -25,4 +25,4 @@ async def on_message(message):
         await message.add_reaction(LANGS[lang])
         break
 
-client.run(TOKEN)
+client.run(creds.TOKEN)

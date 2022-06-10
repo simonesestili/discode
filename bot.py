@@ -1,4 +1,5 @@
 import discord
+from creds import TOKEN
 
 client = discord.Client()
 LANGS = {}

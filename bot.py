@@ -24,4 +24,4 @@ async def on_message(message):
         await message.add_reaction(LANGS[lang])
         break
 
-client.run('OTg0MjMzNzQ1ODM2MDMyMDMw.GPqRSn.wGNfYEJOlWlR7Ax-udRcI7NNrdMVbnpfF90oec')
+client.run(TOKEN)

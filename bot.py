@@ -1,7 +1,12 @@
+import os
 import discord
-import creds
+from dotenv import load_dotenv
+
+load_dotenv()
+TOKEN = os.getenv('TOKEN')
 
 client = discord.Client()
+
 LANGS = ['javascript', 'js', 'java', 'cpp', 'c++', 'csharp', 'cs', 'c_', 'golang', 'go', 'kotlin', 'kt', 'php', 'python', 'py', 'ruby', 'rust', 'swift', 'ts', 'typescript', 'scala']
 REACTS = {}
 
@@ -12,6 +17,7 @@ async def on_ready():
         for lang in emoji.name.split('X'):
             REACTS[lang] = emoji
             if lang == 'cpp': REACTS['c++'] = emoji
+    print(TOKEN)
 
 @client.event
 async def on_message(message):
@@ -26,4 +32,4 @@ async def on_message(message):
         await message.add_reaction(REACTS[lang])
         break
 
-client.run(creds.TOKEN)
+client.run(TOKEN)

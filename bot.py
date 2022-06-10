@@ -17,7 +17,6 @@ async def on_ready():
         for lang in emoji.name.split('X'):
             REACTS[lang] = emoji
             if lang == 'cpp': REACTS['c++'] = emoji
-    print(TOKEN)
 
 @client.event
 async def on_message(message):
